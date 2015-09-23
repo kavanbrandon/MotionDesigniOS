@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8E0F4AC71BB32E58006C3779 /* JNWSpringAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E0F4AC41BB32E58006C3779 /* JNWSpringAnimation.m */; settings = {ASSET_TAGS = (); }; };
+		8E0F4AC81BB32E58006C3779 /* NSValue+JNWAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E0F4AC61BB32E58006C3779 /* NSValue+JNWAdditions.m */; settings = {ASSET_TAGS = (); }; };
 		8E5D15B91BB2FDB900DBEF89 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E5D15B81BB2FDB900DBEF89 /* main.m */; };
 		8E5D15BC1BB2FDB900DBEF89 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E5D15BB1BB2FDB900DBEF89 /* AppDelegate.m */; };
 		8E5D15BF1BB2FDB900DBEF89 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E5D15BE1BB2FDB900DBEF89 /* ViewController.m */; };
@@ -35,6 +37,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8E0F4AC31BB32E58006C3779 /* JNWSpringAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JNWSpringAnimation.h; sourceTree = "<group>"; };
+		8E0F4AC41BB32E58006C3779 /* JNWSpringAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JNWSpringAnimation.m; sourceTree = "<group>"; };
+		8E0F4AC51BB32E58006C3779 /* NSValue+JNWAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSValue+JNWAdditions.h"; sourceTree = "<group>"; };
+		8E0F4AC61BB32E58006C3779 /* NSValue+JNWAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSValue+JNWAdditions.m"; sourceTree = "<group>"; };
 		8E5D15B41BB2FDB900DBEF89 /* MotionDesigniOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MotionDesigniOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E5D15B81BB2FDB900DBEF89 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8E5D15BA1BB2FDB900DBEF89 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -78,6 +84,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8E0F4AC21BB32E44006C3779 /* JNWSpringAnimation */ = {
+			isa = PBXGroup;
+			children = (
+				8E0F4AC31BB32E58006C3779 /* JNWSpringAnimation.h */,
+				8E0F4AC41BB32E58006C3779 /* JNWSpringAnimation.m */,
+				8E0F4AC51BB32E58006C3779 /* NSValue+JNWAdditions.h */,
+				8E0F4AC61BB32E58006C3779 /* NSValue+JNWAdditions.m */,
+			);
+			name = JNWSpringAnimation;
+			sourceTree = "<group>";
+		};
 		8E5D15AB1BB2FDB900DBEF89 = {
 			isa = PBXGroup;
 			children = (
@@ -117,6 +134,7 @@
 		8E5D15B71BB2FDB900DBEF89 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				8E0F4AC21BB32E44006C3779 /* JNWSpringAnimation */,
 				8E5D15B81BB2FDB900DBEF89 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -271,7 +289,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				8E5D15BF1BB2FDB900DBEF89 /* ViewController.m in Sources */,
+				8E0F4AC71BB32E58006C3779 /* JNWSpringAnimation.m in Sources */,
 				8E5D15BC1BB2FDB900DBEF89 /* AppDelegate.m in Sources */,
+				8E0F4AC81BB32E58006C3779 /* NSValue+JNWAdditions.m in Sources */,
 				8E5D15B91BB2FDB900DBEF89 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -414,9 +434,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = MotionDesigniOS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = TestProject.MotionDesigniOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -425,9 +447,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = MotionDesigniOS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = TestProject.MotionDesigniOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -498,6 +522,7 @@
 				8E5D15E31BB2FDB900DBEF89 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8E5D15E41BB2FDB900DBEF89 /* Build configuration list for PBXNativeTarget "MotionDesigniOSTests" */ = {
 			isa = XCConfigurationList;
@@ -506,6 +531,7 @@
 				8E5D15E61BB2FDB900DBEF89 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8E5D15E71BB2FDB900DBEF89 /* Build configuration list for PBXNativeTarget "MotionDesigniOSUITests" */ = {
 			isa = XCConfigurationList;
@@ -514,6 +540,7 @@
 				8E5D15E91BB2FDB900DBEF89 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
