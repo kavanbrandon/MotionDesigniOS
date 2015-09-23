@@ -1,0 +1,521 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8E5D15B91BB2FDB900DBEF89 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E5D15B81BB2FDB900DBEF89 /* main.m */; };
+		8E5D15BC1BB2FDB900DBEF89 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E5D15BB1BB2FDB900DBEF89 /* AppDelegate.m */; };
+		8E5D15BF1BB2FDB900DBEF89 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E5D15BE1BB2FDB900DBEF89 /* ViewController.m */; };
+		8E5D15C21BB2FDB900DBEF89 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E5D15C01BB2FDB900DBEF89 /* Main.storyboard */; };
+		8E5D15C41BB2FDB900DBEF89 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8E5D15C31BB2FDB900DBEF89 /* Assets.xcassets */; };
+		8E5D15C71BB2FDB900DBEF89 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E5D15C51BB2FDB900DBEF89 /* LaunchScreen.storyboard */; };
+		8E5D15D21BB2FDB900DBEF89 /* MotionDesigniOSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E5D15D11BB2FDB900DBEF89 /* MotionDesigniOSTests.m */; };
+		8E5D15DD1BB2FDB900DBEF89 /* MotionDesigniOSUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E5D15DC1BB2FDB900DBEF89 /* MotionDesigniOSUITests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8E5D15CE1BB2FDB900DBEF89 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8E5D15AC1BB2FDB900DBEF89 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8E5D15B31BB2FDB900DBEF89;
+			remoteInfo = MotionDesigniOS;
+		};
+		8E5D15D91BB2FDB900DBEF89 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8E5D15AC1BB2FDB900DBEF89 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8E5D15B31BB2FDB900DBEF89;
+			remoteInfo = MotionDesigniOS;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		8E5D15B41BB2FDB900DBEF89 /* MotionDesigniOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MotionDesigniOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8E5D15B81BB2FDB900DBEF89 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		8E5D15BA1BB2FDB900DBEF89 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		8E5D15BB1BB2FDB900DBEF89 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		8E5D15BD1BB2FDB900DBEF89 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		8E5D15BE1BB2FDB900DBEF89 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		8E5D15C11BB2FDB900DBEF89 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		8E5D15C31BB2FDB900DBEF89 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8E5D15C61BB2FDB900DBEF89 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		8E5D15C81BB2FDB900DBEF89 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8E5D15CD1BB2FDB900DBEF89 /* MotionDesigniOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MotionDesigniOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8E5D15D11BB2FDB900DBEF89 /* MotionDesigniOSTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MotionDesigniOSTests.m; sourceTree = "<group>"; };
+		8E5D15D31BB2FDB900DBEF89 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8E5D15D81BB2FDB900DBEF89 /* MotionDesigniOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MotionDesigniOSUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8E5D15DC1BB2FDB900DBEF89 /* MotionDesigniOSUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MotionDesigniOSUITests.m; sourceTree = "<group>"; };
+		8E5D15DE1BB2FDB900DBEF89 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8E5D15B11BB2FDB900DBEF89 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8E5D15CA1BB2FDB900DBEF89 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8E5D15D51BB2FDB900DBEF89 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8E5D15AB1BB2FDB900DBEF89 = {
+			isa = PBXGroup;
+			children = (
+				8E5D15B61BB2FDB900DBEF89 /* MotionDesigniOS */,
+				8E5D15D01BB2FDB900DBEF89 /* MotionDesigniOSTests */,
+				8E5D15DB1BB2FDB900DBEF89 /* MotionDesigniOSUITests */,
+				8E5D15B51BB2FDB900DBEF89 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		8E5D15B51BB2FDB900DBEF89 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8E5D15B41BB2FDB900DBEF89 /* MotionDesigniOS.app */,
+				8E5D15CD1BB2FDB900DBEF89 /* MotionDesigniOSTests.xctest */,
+				8E5D15D81BB2FDB900DBEF89 /* MotionDesigniOSUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8E5D15B61BB2FDB900DBEF89 /* MotionDesigniOS */ = {
+			isa = PBXGroup;
+			children = (
+				8E5D15BA1BB2FDB900DBEF89 /* AppDelegate.h */,
+				8E5D15BB1BB2FDB900DBEF89 /* AppDelegate.m */,
+				8E5D15BD1BB2FDB900DBEF89 /* ViewController.h */,
+				8E5D15BE1BB2FDB900DBEF89 /* ViewController.m */,
+				8E5D15C01BB2FDB900DBEF89 /* Main.storyboard */,
+				8E5D15C31BB2FDB900DBEF89 /* Assets.xcassets */,
+				8E5D15C51BB2FDB900DBEF89 /* LaunchScreen.storyboard */,
+				8E5D15C81BB2FDB900DBEF89 /* Info.plist */,
+				8E5D15B71BB2FDB900DBEF89 /* Supporting Files */,
+			);
+			path = MotionDesigniOS;
+			sourceTree = "<group>";
+		};
+		8E5D15B71BB2FDB900DBEF89 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8E5D15B81BB2FDB900DBEF89 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8E5D15D01BB2FDB900DBEF89 /* MotionDesigniOSTests */ = {
+			isa = PBXGroup;
+			children = (
+				8E5D15D11BB2FDB900DBEF89 /* MotionDesigniOSTests.m */,
+				8E5D15D31BB2FDB900DBEF89 /* Info.plist */,
+			);
+			path = MotionDesigniOSTests;
+			sourceTree = "<group>";
+		};
+		8E5D15DB1BB2FDB900DBEF89 /* MotionDesigniOSUITests */ = {
+			isa = PBXGroup;
+			children = (
+				8E5D15DC1BB2FDB900DBEF89 /* MotionDesigniOSUITests.m */,
+				8E5D15DE1BB2FDB900DBEF89 /* Info.plist */,
+			);
+			path = MotionDesigniOSUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8E5D15B31BB2FDB900DBEF89 /* MotionDesigniOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8E5D15E11BB2FDB900DBEF89 /* Build configuration list for PBXNativeTarget "MotionDesigniOS" */;
+			buildPhases = (
+				8E5D15B01BB2FDB900DBEF89 /* Sources */,
+				8E5D15B11BB2FDB900DBEF89 /* Frameworks */,
+				8E5D15B21BB2FDB900DBEF89 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MotionDesigniOS;
+			productName = MotionDesigniOS;
+			productReference = 8E5D15B41BB2FDB900DBEF89 /* MotionDesigniOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+		8E5D15CC1BB2FDB900DBEF89 /* MotionDesigniOSTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8E5D15E41BB2FDB900DBEF89 /* Build configuration list for PBXNativeTarget "MotionDesigniOSTests" */;
+			buildPhases = (
+				8E5D15C91BB2FDB900DBEF89 /* Sources */,
+				8E5D15CA1BB2FDB900DBEF89 /* Frameworks */,
+				8E5D15CB1BB2FDB900DBEF89 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8E5D15CF1BB2FDB900DBEF89 /* PBXTargetDependency */,
+			);
+			name = MotionDesigniOSTests;
+			productName = MotionDesigniOSTests;
+			productReference = 8E5D15CD1BB2FDB900DBEF89 /* MotionDesigniOSTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		8E5D15D71BB2FDB900DBEF89 /* MotionDesigniOSUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8E5D15E71BB2FDB900DBEF89 /* Build configuration list for PBXNativeTarget "MotionDesigniOSUITests" */;
+			buildPhases = (
+				8E5D15D41BB2FDB900DBEF89 /* Sources */,
+				8E5D15D51BB2FDB900DBEF89 /* Frameworks */,
+				8E5D15D61BB2FDB900DBEF89 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8E5D15DA1BB2FDB900DBEF89 /* PBXTargetDependency */,
+			);
+			name = MotionDesigniOSUITests;
+			productName = MotionDesigniOSUITests;
+			productReference = 8E5D15D81BB2FDB900DBEF89 /* MotionDesigniOSUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8E5D15AC1BB2FDB900DBEF89 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = "Kavan Brandon";
+				TargetAttributes = {
+					8E5D15B31BB2FDB900DBEF89 = {
+						CreatedOnToolsVersion = 7.0;
+					};
+					8E5D15CC1BB2FDB900DBEF89 = {
+						CreatedOnToolsVersion = 7.0;
+						TestTargetID = 8E5D15B31BB2FDB900DBEF89;
+					};
+					8E5D15D71BB2FDB900DBEF89 = {
+						CreatedOnToolsVersion = 7.0;
+						TestTargetID = 8E5D15B31BB2FDB900DBEF89;
+					};
+				};
+			};
+			buildConfigurationList = 8E5D15AF1BB2FDB900DBEF89 /* Build configuration list for PBXProject "MotionDesigniOS" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 8E5D15AB1BB2FDB900DBEF89;
+			productRefGroup = 8E5D15B51BB2FDB900DBEF89 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8E5D15B31BB2FDB900DBEF89 /* MotionDesigniOS */,
+				8E5D15CC1BB2FDB900DBEF89 /* MotionDesigniOSTests */,
+				8E5D15D71BB2FDB900DBEF89 /* MotionDesigniOSUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8E5D15B21BB2FDB900DBEF89 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8E5D15C71BB2FDB900DBEF89 /* LaunchScreen.storyboard in Resources */,
+				8E5D15C41BB2FDB900DBEF89 /* Assets.xcassets in Resources */,
+				8E5D15C21BB2FDB900DBEF89 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8E5D15CB1BB2FDB900DBEF89 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8E5D15D61BB2FDB900DBEF89 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8E5D15B01BB2FDB900DBEF89 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8E5D15BF1BB2FDB900DBEF89 /* ViewController.m in Sources */,
+				8E5D15BC1BB2FDB900DBEF89 /* AppDelegate.m in Sources */,
+				8E5D15B91BB2FDB900DBEF89 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8E5D15C91BB2FDB900DBEF89 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8E5D15D21BB2FDB900DBEF89 /* MotionDesigniOSTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8E5D15D41BB2FDB900DBEF89 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8E5D15DD1BB2FDB900DBEF89 /* MotionDesigniOSUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8E5D15CF1BB2FDB900DBEF89 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8E5D15B31BB2FDB900DBEF89 /* MotionDesigniOS */;
+			targetProxy = 8E5D15CE1BB2FDB900DBEF89 /* PBXContainerItemProxy */;
+		};
+		8E5D15DA1BB2FDB900DBEF89 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8E5D15B31BB2FDB900DBEF89 /* MotionDesigniOS */;
+			targetProxy = 8E5D15D91BB2FDB900DBEF89 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		8E5D15C01BB2FDB900DBEF89 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8E5D15C11BB2FDB900DBEF89 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		8E5D15C51BB2FDB900DBEF89 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8E5D15C61BB2FDB900DBEF89 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		8E5D15DF1BB2FDB900DBEF89 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		8E5D15E01BB2FDB900DBEF89 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8E5D15E21BB2FDB900DBEF89 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = MotionDesigniOS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = TestProject.MotionDesigniOS;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		8E5D15E31BB2FDB900DBEF89 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = MotionDesigniOS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = TestProject.MotionDesigniOS;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		8E5D15E51BB2FDB900DBEF89 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = MotionDesigniOSTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = TestProject.MotionDesigniOSTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MotionDesigniOS.app/MotionDesigniOS";
+			};
+			name = Debug;
+		};
+		8E5D15E61BB2FDB900DBEF89 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = MotionDesigniOSTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = TestProject.MotionDesigniOSTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MotionDesigniOS.app/MotionDesigniOS";
+			};
+			name = Release;
+		};
+		8E5D15E81BB2FDB900DBEF89 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = MotionDesigniOSUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = TestProject.MotionDesigniOSUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = MotionDesigniOS;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		8E5D15E91BB2FDB900DBEF89 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = MotionDesigniOSUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = TestProject.MotionDesigniOSUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = MotionDesigniOS;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8E5D15AF1BB2FDB900DBEF89 /* Build configuration list for PBXProject "MotionDesigniOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8E5D15DF1BB2FDB900DBEF89 /* Debug */,
+				8E5D15E01BB2FDB900DBEF89 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8E5D15E11BB2FDB900DBEF89 /* Build configuration list for PBXNativeTarget "MotionDesigniOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8E5D15E21BB2FDB900DBEF89 /* Debug */,
+				8E5D15E31BB2FDB900DBEF89 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		8E5D15E41BB2FDB900DBEF89 /* Build configuration list for PBXNativeTarget "MotionDesigniOSTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8E5D15E51BB2FDB900DBEF89 /* Debug */,
+				8E5D15E61BB2FDB900DBEF89 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		8E5D15E71BB2FDB900DBEF89 /* Build configuration list for PBXNativeTarget "MotionDesigniOSUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8E5D15E81BB2FDB900DBEF89 /* Debug */,
+				8E5D15E91BB2FDB900DBEF89 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8E5D15AC1BB2FDB900DBEF89 /* Project object */;
+}
