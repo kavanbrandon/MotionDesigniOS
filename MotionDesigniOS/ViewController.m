@@ -8,9 +8,11 @@
 
 #import "ViewController.h"
 #import "JNWSpringAnimation.h"
+#import "AppDelegate.h"
 
 @interface ViewController ()
 @property (weak, nonatomic) IBOutlet UIView *designView;
+@property (weak, nonatomic) IBOutlet UIView *overlayView;
 
 @end
 
@@ -20,13 +22,15 @@
     [super viewDidLoad];
     
 //    //Do any additional setup after loading the view, typically from a nib.
-//
+    self.designView.alpha = 0.0;
+    self.overlayView.alpha = 0.0;
+    
+    [self setOverlayViewFrame];
+    
 //    [self basicScaleAnimation];
 //    [self animateWithConcat];
 //    [self animateWithDampingSpring];
     
-    /* To start, we defined our JNWSpringAnimation object, a new instance of an animation, and named it scale. We used the designated initializer and passed in a key path of “transform.scale”, but what does that really mean? The key path is simply the property or value which we want to be animated. It’s a property of the view’s underlying CALayer object, which is the thing we’re actually going to be animating here since we’re using a keyframe animation.
-     */
 //    [self animateScaleWithJNWSpringAnimation];
 //    [self animateRotationWithJNWSpringAnimation];
 //    [self animateDampnessAndStiffnessWithJNWSpringAnimation];
@@ -34,6 +38,7 @@
 }
 
 -(void)basicScaleAnimation {
+    self.designView.alpha = 1.0;
     self.designView.backgroundColor = [UIColor redColor];
     self.designView.layer.cornerRadius = 50;
     [UIView animateWithDuration:.5 delay:0
@@ -43,6 +48,7 @@
 }
 
 -(void)animateWithConcat {
+    self.designView.alpha = 1.0;
     self.designView.backgroundColor = [UIColor redColor];
     self.designView.layer.cornerRadius = 50;
     [UIView animateWithDuration:.5 delay:0
@@ -58,7 +64,7 @@
 }
 
 -(void)animateWithDampingSpring {
-    
+    self.designView.alpha = 1.0;
     self.designView.backgroundColor = [UIColor blueColor];
     self.designView.layer.cornerRadius = 50;
     
@@ -71,6 +77,7 @@
 
 -(void)animateScaleWithJNWSpringAnimation {
     //Using JNWSpringAnimation to perform scale.
+    self.designView.alpha = 1.0;
     self.designView.backgroundColor = [UIColor redColor];
     self.designView.layer.cornerRadius = 50;
     JNWSpringAnimation *scale = [JNWSpringAnimation animationWithKeyPath:@"transform.scale"];
@@ -84,8 +91,11 @@
     self.designView.transform = CGAffineTransformMakeScale(2.0, 2.0);
 }
 
+/* To start, we defined our JNWSpringAnimation object, a new instance of an animation, and named it scale. We used the designated initializer and passed in a key path of “transform.scale”, but what does that really mean? The key path is simply the property or value which we want to be animated. It’s a property of the view’s underlying CALayer object, which is the thing we’re actually going to be animating here since we’re using a keyframe animation.
+ */
 -(void)animateRotationWithJNWSpringAnimation {
     //Using JNWSpringAnimation to perform rotation.
+    self.designView.alpha = 1.0;
     self.designView.backgroundColor = [UIColor purpleColor];
     self.designView.layer.cornerRadius = 0;
     JNWSpringAnimation *scale =
@@ -103,6 +113,7 @@
 
 -(void)animateDampnessAndStiffnessWithJNWSpringAnimation {
     //Using JNWSpringAnimation to perform dampness and stiffness.
+    self.designView.alpha = 1.0;
     self.designView.backgroundColor = [UIColor orangeColor];
     self.designView.layer.cornerRadius = 50;
     JNWSpringAnimation *scale = [JNWSpringAnimation animationWithKeyPath:@"transform.translation.x"];
@@ -119,6 +130,7 @@
 
 -(void)animateScaleAndRotationJNWSpringAnimation {
     //Animate two components simultaneously
+    self.designView.alpha = 1.0;
     self.designView.backgroundColor = [UIColor blueColor];
     JNWSpringAnimation *scale = [JNWSpringAnimation
                                  animationWithKeyPath:@"transform.scale"];
@@ -141,6 +153,14 @@
     
     [self.designView.layer addAnimation:rotate forKey:rotate.keyPath];
     self.designView.transform = CGAffineTransformRotate(self.designView.transform, M_PI);
+}
+
+-(void)setOverlayViewFrame{
+    CGRect screenRect = [[UIScreen mainScreen] bounds];
+    
+    [self.overlayView setFrame:screenRect];
+    self.overlayView.backgroundColor = [UIColor blackColor];
+    self.overlayView.alpha = 1.0f;
 }
 
 - (void)didReceiveMemoryWarning {
