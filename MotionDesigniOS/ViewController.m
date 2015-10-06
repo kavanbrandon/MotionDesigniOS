@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "JNWSpringAnimation.h"
 #import "AppDelegate.h"
+#import "Pop.h"
 
 @interface ViewController ()
 @property (weak, nonatomic) IBOutlet UIView *designView;
@@ -37,9 +38,6 @@
 //    [self addMapIcon];
     
 //    [self delayedMusicPlayerAnimation];
-
-    
-
 }
 
 - (IBAction)runButton:(id)sender {
@@ -55,6 +53,8 @@
     //    [self animateRotationWithJNWSpringAnimation];
     //    [self animateDampnessAndStiffnessWithJNWSpringAnimation];
     //    [self animateScaleAndRotationJNWSpringAnimation];
+    
+    [self popAnimationSimple];
 }
 
 -(void)basicScaleAnimation {
@@ -641,5 +641,28 @@
  If you notice in the 2nd for loop, in the animation block, my delay value is set to diff * b. Because I’m in a loop, I can use the loop’s counter variable b to keep the animation timing in sync, by just multiplying it by the time difference between each row I’m animating. That will insure that there’s the same time difference between each row’s animation which will generate the nice, wave-like pattern. And that’s all there is to it!
  */
 //}
+
+-(void)popAnimationSimple {
+
+    CGFloat windowWidth = self.view.bounds.size.width;
+    
+    UIView *redBall = [[UIView alloc] initWithFrame:CGRectMake(windowWidth/2, 300, 75, 75)];
+    redBall.backgroundColor = [UIColor redColor];
+    redBall.layer.cornerRadius = 75/2;
+    [self.view addSubview:redBall];
+    
+    POPSpringAnimation *scale = [POPSpringAnimation animationWithPropertyNamed:kPOPViewScaleXY];
+    scale.toValue = [NSValue valueWithCGPoint:CGPointMake(2, 2)];
+    scale.springBounciness = 20.0f;
+    scale.springSpeed = 1.0f;
+    [redBall pop_addAnimation:scale forKey:@"scale"];
+}
+
+
+
+
+
+
+
 
 @end
