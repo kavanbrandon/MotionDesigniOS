@@ -13,7 +13,12 @@
 @interface ViewController ()
 @property (weak, nonatomic) IBOutlet UIView *designView;
 @property (weak, nonatomic) IBOutlet UIView *overlayView;
+
 - (IBAction)runButton:(id)sender;
+
+@property (strong, nonatomic) IBOutlet UIImageView *appBackground;
+@property (strong, nonatomic) IBOutlet UIImageView *mapView;
+@property (assign) BOOL mapShowing;
 
 @end
 
@@ -25,12 +30,17 @@
 //    //Do any additional setup after loading the view, typically from a nib.
     self.designView.alpha = 0.0;
     self.overlayView.alpha = 0.0;
+    self.appBackground.alpha = 0.0;
+    
+//    [self setBackgroundAppImage];
+//    [self setMapView];
+//    [self addMapIcon];
 }
 
 - (IBAction)runButton:(id)sender {
     
-    [self setOverlayViewFrame];
-    [self setUIAlertViewBounce];
+    //    [self setOverlayViewFrame];
+    //    [self setUIAlertViewBounce];
     
     //    [self basicScaleAnimation];
     //    [self animateWithConcat];
@@ -358,7 +368,6 @@
         alertView.transform = CGAffineTransformScale(CGAffineTransformIdentity, 0, 0);
         
     });
-    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -366,14 +375,136 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(void)setBackgroundAppImage{
+    self.appBackground.translatesAutoresizingMaskIntoConstraints = YES;
+    self.appBackground.alpha = 1.0f;
+    [self.appBackground setFrame:CGRectMake(0, 20, self.view.bounds.size.width, 548)];
+    self.appBackground.image = [UIImage imageNamed:@"app-bg"];
+}
 
+-(void)setMapView {
+    self.mapView.translatesAutoresizingMaskIntoConstraints = YES;
+    self.mapView.alpha = 0.0f;
+    [self.mapView setFrame:CGRectMake(0, 62, self.view.bounds.size.width, 458)];
+    self.mapView.image = [UIImage imageNamed:@"map-arrow"];
+    self.mapView.transform = CGAffineTransformMakeTranslation(0, 30);
+    self.mapView.transform = CGAffineTransformScale(self.mapView.transform, 1.1, 1.1);
+}
 
+-(void)addMapIcon{
+    UIButton *icon = [UIButton buttonWithType:UIButtonTypeCustom];
+    [icon setImage:[UIImage imageNamed:@"map-icon"] forState:UIControlStateNormal];
+    [icon addTarget:self action:@selector(didTapMapIcon:) forControlEvents:UIControlEventTouchUpInside];
+    [icon setFrame:CGRectMake(self.view.bounds.size.width - 49, 19, 49, 44)];
+    [self.view addSubview:icon];
+}
 
-
-
-
-
-
+-(void)didTapMapIcon:(id)sender {
+    
+    if (self.mapShowing) {
+        // Code for when the map is already visible goes here
+        self.mapShowing = NO;
+        
+        /*
+         Re-using the same damping and stiffness throughout these animations
+         so we’ll capture the value as a CGFloat variable. Notice that this value is
+         higher which means the animation will take less time (as is the case with
+         spring animations with matching damping and stiffnesses). Less time is good
+         because we’re going back to the default state of the interface and at this point
+         the user just wants the map to get out of the way.
+         */
+        CGFloat dampingStiffnessOut = 24.0f;
+        
+        // Again, it’s important to begin from the current state so that when a user taps
+        // on the button a bunch, there are no jerky movements
+        [UIView animateWithDuration:.5 delay:0 options:UIViewAnimationOptionCurveEaseInOut|UIViewAnimationOptionBeginFromCurrentState animations:^{
+            self.appBackground.alpha = 1.0f;
+        } completion:NULL];
+        
+        [UIView animateWithDuration:.3 delay:0 options:UIViewAnimationOptionCurveEaseInOut|UIViewAnimationOptionBeginFromCurrentState animations:^{
+            self.mapView.alpha = 0.0f;
+        } completion:NULL];
+        
+        // Map gets 2 separate animations, one for position and the other for scale.
+        // We are accessing the @"transform.scale" current, in-flight values via the
+        // presentationLayer just like in the previous example
+        JNWSpringAnimation *mapScale = [JNWSpringAnimation animationWithKeyPath:@"transform.scale"];
+        mapScale.damping = dampingStiffnessOut;
+        mapScale.stiffness = dampingStiffnessOut;
+        mapScale.mass = 1;
+        mapScale.fromValue = @([[self.mapView.layer.presentationLayer valueForKeyPath:mapScale.keyPath] floatValue]);
+        mapScale.toValue = @(1.1);
+        
+        [self.mapView.layer addAnimation:mapScale forKey:mapScale.keyPath];
+        self.mapView.transform = CGAffineTransformScale(CGAffineTransformIdentity, 1.1, 1.1);
+        
+        JNWSpringAnimation *mapTranslate = [JNWSpringAnimation animationWithKeyPath:@"transform.translation.y"];
+        mapTranslate.damping = dampingStiffnessOut;
+        mapTranslate.stiffness = dampingStiffnessOut;
+        mapTranslate.mass = 1;
+        mapTranslate.fromValue = @([[self.mapView.layer.presentationLayer valueForKeyPath:mapTranslate.keyPath] floatValue]);
+        mapTranslate.toValue = @(30);
+        
+        [self.mapView.layer addAnimation:mapTranslate forKey:mapTranslate.keyPath];
+        self.mapView.transform = CGAffineTransformTranslate(self.mapView.transform, 0, 30);
+        
+        // Scale animation for the main app background. We animate it back to a 1.0 scale
+        JNWSpringAnimation *scale = [JNWSpringAnimation animationWithKeyPath:@"transform.scale"];
+        scale.damping = dampingStiffnessOut;
+        scale.stiffness = dampingStiffnessOut;
+        scale.mass = 1;
+        scale.fromValue = @([[self.appBackground.layer.presentationLayer valueForKeyPath:@"transform.scale.x"] floatValue]);
+        scale.toValue = @(1.0);
+        
+        [self.appBackground.layer addAnimation:scale forKey:scale.keyPath];
+        self.appBackground.transform = CGAffineTransformScale(CGAffineTransformIdentity, 1.0, 1.0);
+    }
+    else {
+        // Code for when the map is not visible yet goes here
+        self.mapShowing = YES;
+        CGFloat dampingStiffness = 16.0f;
+        
+        [UIView animateWithDuration:.5 delay:0 options:UIViewAnimationOptionCurveEaseInOut|UIViewAnimationOptionBeginFromCurrentState animations:^{
+            self.appBackground.alpha = 0.3f;
+        } completion:NULL];
+    
+        [UIView animateWithDuration:.15 delay:0 options:UIViewAnimationOptionCurveEaseInOut|UIViewAnimationOptionBeginFromCurrentState animations:^{
+            self.mapView.alpha = 1.0f;
+        } completion:NULL];
+        
+        // Map gets 2 separate animations, one for position and the other for scale
+        JNWSpringAnimation *mapScale = [JNWSpringAnimation animationWithKeyPath:@"transform.scale"];
+        mapScale.damping = dampingStiffness;
+        mapScale.stiffness = dampingStiffness;
+        mapScale.mass = 1;
+        mapScale.fromValue = @([[self.mapView.layer.presentationLayer valueForKeyPath:mapScale.keyPath] floatValue]);
+        mapScale.toValue = @(1.0);
+        
+        [self.mapView.layer addAnimation:mapScale forKey:mapScale.keyPath];
+        self.mapView.transform = CGAffineTransformScale(CGAffineTransformIdentity, 1, 1);
+        
+        JNWSpringAnimation *mapTranslate = [JNWSpringAnimation animationWithKeyPath:@"transform.translation.y"];
+        mapTranslate.damping = dampingStiffness;
+        mapTranslate.stiffness = dampingStiffness;
+        mapTranslate.mass = 1;
+        mapTranslate.fromValue = @([[self.mapView.layer.presentationLayer valueForKeyPath:mapTranslate.keyPath] floatValue]);
+        mapTranslate.toValue = @(0);
+        
+        [self.mapView.layer addAnimation:mapTranslate forKey:mapTranslate.keyPath];
+        self.mapView.transform = CGAffineTransformTranslate(self.mapView.transform, 0, 0);
+        
+        // Scale animation for the main app background
+        JNWSpringAnimation *scale = [JNWSpringAnimation animationWithKeyPath:@"transform.scale"];
+        scale.damping = dampingStiffness;
+        scale.stiffness = dampingStiffness;
+        scale.mass = 1;
+        scale.fromValue = @([[self.appBackground.layer.presentationLayer valueForKeyPath:scale.keyPath] floatValue]);
+        scale.toValue = @(0.9);
+        
+        [self.appBackground.layer addAnimation:scale forKey:scale.keyPath];
+        self.appBackground.transform = CGAffineTransformScale(CGAffineTransformIdentity, .9, .9);
+    }
+}
 
 
 

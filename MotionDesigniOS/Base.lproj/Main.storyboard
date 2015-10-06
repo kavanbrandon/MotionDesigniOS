@@ -31,6 +31,12 @@
                                     <action selector="runButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hd5-by-1Bv"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rcJ-v2-aFh">
+                                <rect key="frame" x="87" y="94" width="240" height="128"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dpm-pi-agA">
+                                <rect key="frame" x="87" y="71" width="240" height="128"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -41,7 +47,9 @@
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                     <connections>
+                        <outlet property="appBackground" destination="rcJ-v2-aFh" id="YRK-vB-4L1"/>
                         <outlet property="designView" destination="3D2-fm-SR6" id="x88-gH-Cu4"/>
+                        <outlet property="mapView" destination="dpm-pi-agA" id="Csx-Pg-pqN"/>
                         <outlet property="overlayView" destination="JF6-5Y-Wc5" id="g1B-nz-C36"/>
                     </connections>
                 </viewController>
