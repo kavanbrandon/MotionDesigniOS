@@ -35,6 +35,11 @@
 //    [self setBackgroundAppImage];
 //    [self setMapView];
 //    [self addMapIcon];
+    
+//    [self delayedMusicPlayerAnimation];
+
+    
+
 }
 
 - (IBAction)runButton:(id)sender {
@@ -506,17 +511,135 @@
     }
 }
 
+-(void)delayedMusicPlayerAnimation {
+    CGFloat windowWidth = self.view.bounds.size.width;
+    
+    // Add the background to the window
+    UIImageView *backgroundView = [[UIImageView alloc] initWithFrame:self.view.bounds];
+    backgroundView.image = [UIImage imageNamed:@"background"];
+    [self.view addSubview:backgroundView];
+    
+    // Add the arrow and top label
+    UIImageView *arrowView = [[UIImageView alloc] initWithFrame:CGRectMake(windowWidth, 0, windowWidth, 45)];
+    arrowView.image = [UIImage imageNamed:@"arrow"];
+    [self.view addSubview:arrowView];
+    
+    // Ministry of Fun image
+    UIImageView *ministryView = [[UIImageView alloc] initWithFrame:CGRectMake(windowWidth, 57, windowWidth, 28)];
+    ministryView.image = [UIImage imageNamed:@"ministry"];
+    [self.view addSubview:ministryView];
+    
+    // Add a Song button
+    UIButton *addButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [addButton setImage:[UIImage imageNamed:@"add-button"] forState:UIControlStateNormal];
+    [addButton setImage:[UIImage imageNamed:@"add-button-pressed"] forState:UIControlStateHighlighted];
+    [addButton setFrame:CGRectMake(windowWidth, 102, windowWidth, 45)];
+    [self.view addSubview:addButton];
+    
+    // Katy Perry row
+    UIImageView *firstRow = [[UIImageView alloc] initWithFrame:CGRectMake(windowWidth, 170, windowWidth, 80)];
+    firstRow.image = [UIImage imageNamed:@"1st-row"];
+    [self.view addSubview:firstRow];
+    
+    // Shakira row
+    UIImageView *secondRow = [[UIImageView alloc] initWithFrame:CGRectMake(windowWidth, 170+80, windowWidth, 80)];
+    secondRow.image = [UIImage imageNamed:@"2nd-row"];
+    [self.view addSubview:secondRow];
+    
+    // Pitbull row
+    UIImageView *thirdRow = [[UIImageView alloc] initWithFrame:CGRectMake(windowWidth, 170+160, windowWidth, 80)];
+    thirdRow.image = [UIImage imageNamed:@"3rd-row"];
+    [self.view addSubview:thirdRow];
+    
+    // Lana del Rey row
+    UIImageView *fourthRow = [[UIImageView alloc] initWithFrame:CGRectMake(windowWidth, 170+240, windowWidth, 80)];
+    fourthRow.image = [UIImage imageNamed:@"4th-row"];
+    [self.view addSubview:fourthRow];
+    
+    // HEX row
+    UIImageView *fifthRow = [[UIImageView alloc] initWithFrame:CGRectMake(windowWidth, 170+320, windowWidth, 80)];
+    fifthRow.image = [UIImage imageNamed:@"5th-row"];
+    [self.view addSubview:fifthRow];
+    
+    //Animations
+    
+    CGFloat initialDelay = 1.0f;
+    CGFloat stutter = 0.06f;
+    CGFloat durationLength = 2.1;
+    
+    //The way that Apple has built this method, the damping has to be a value between 0 and 1, and the closer to 0 it is, the springier the spring motion. The closer to 1 it gets, the fewer bounces until it doesn’t bounce it all and gradually eases to the final value.
+    // Animate the top arrow image
+    [UIView animateWithDuration:durationLength delay:initialDelay usingSpringWithDamping:0.6 initialSpringVelocity:0 options:0 animations:^{
+        [arrowView setFrame:CGRectMake(0, 0, windowWidth, 45)];
+    } completion:NULL];
+    
+    // Animate the image label Ministry of Fun
+    [UIView animateWithDuration:durationLength delay:initialDelay + (1 * stutter) usingSpringWithDamping:0.6 initialSpringVelocity:0 options:0 animations:^{
+        [ministryView setFrame:CGRectMake(0, 57, windowWidth, 28)];
+    } completion:NULL];
+    
+    [UIView animateWithDuration:durationLength delay:initialDelay + (2 * stutter) usingSpringWithDamping:0.6 initialSpringVelocity:0 options:0 animations:^{
+        [addButton setFrame:CGRectMake(0, 102, windowWidth, 45)];
+    } completion:NULL];
+    
+    [UIView animateWithDuration:durationLength delay:initialDelay + (3 * stutter) usingSpringWithDamping:0.6 initialSpringVelocity:0 options:0 animations:^{
+        [firstRow setFrame:CGRectMake(0, 170, windowWidth, 80)];
+    } completion:NULL];
+    
+    [UIView animateWithDuration:durationLength delay:initialDelay + (4 * stutter) usingSpringWithDamping:0.6 initialSpringVelocity:0 options:0 animations:^{
+        [secondRow setFrame:CGRectMake(0, 170+80, windowWidth, 80)];
+    } completion:NULL];
+    
+    [UIView animateWithDuration:durationLength delay:initialDelay + (5 * stutter) usingSpringWithDamping:0.6 initialSpringVelocity:0 options:0 animations:^{
+        [thirdRow setFrame:CGRectMake(0, 170+160, windowWidth, 80)];
+    } completion:NULL];
+    
+    [UIView animateWithDuration:durationLength delay:initialDelay + (6 * stutter) usingSpringWithDamping:0.6 initialSpringVelocity:0 options:0 animations:^{
+        [fourthRow setFrame:CGRectMake(0, 170+240, windowWidth, 80)];
+    } completion:NULL];
+    
+    [UIView animateWithDuration:durationLength delay:initialDelay + (7 * stutter) usingSpringWithDamping:0.6 initialSpringVelocity:0 options:0 animations:^{
+        [fifthRow setFrame:CGRectMake(0, 170+320, windowWidth, 80)];
+    } completion:NULL];
+}
 
 
-
-
-
-
-
-
-
-
-
-
+//-(void)animateTableViewRowsIntoPosition {
+//    // Make the table invisible, then reload its data
+//    self.tableView.alpha = 0.0f;
+//    [self.tableView reloadData];
+//
+//    // Store a delta timing variable so I can tweak the timing delay
+//    // between each row’s animation and some additional
+//    CGFloat diff = .05;
+//    CGFloat tableHeight = self.tableView.bounds.size.height;
+//    NSArray *cells = [self.tableView visibleCells];
+//
+//    // Iterate across the rows and translate them down off the screen
+//    for (NSUInteger a = 0; a < [cells count]; a++) {
+//        UITableViewCell *cell = [cells objectAtIndex:a];
+//        if ([cell isKindOfClass:[UITableViewCell class]]) {
+//
+//            // Move each cell off the bottom of the screen by translating its Y position
+//            cell.transform = CGAffineTransformMakeTranslation(0, tableHeight);
+//        }
+//    }
+//
+//    // Now that all rows are off the screen, make the tableview opaque again
+//    self.tableView.alpha = 1.0f;
+//
+//    // Animate each row back into place
+//    for (NSUInteger b = 0; b < [cells count]; b++) {
+//        UITableViewCell *cell = [cells objectAtIndex:b];
+//
+//        [UIView animateWithDuration:1.6 delay:diff*b usingSpringWithDamping:0.77
+//              initialSpringVelocity:0 options:0 animations:^{
+//                  cell.transform = CGAffineTransformMakeTranslation(0, 0);
+//              } completion:NULL];
+//    }
+/*
+ If you notice in the 2nd for loop, in the animation block, my delay value is set to diff * b. Because I’m in a loop, I can use the loop’s counter variable b to keep the animation timing in sync, by just multiplying it by the time difference between each row I’m animating. That will insure that there’s the same time difference between each row’s animation which will generate the nice, wave-like pattern. And that’s all there is to it!
+ */
+//}
 
 @end
