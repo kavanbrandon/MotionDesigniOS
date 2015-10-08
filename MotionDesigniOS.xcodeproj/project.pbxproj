@@ -26,6 +26,7 @@
 		8E2E76CB1BC45628008BC253 /* add-button-pressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E2E76C11BC45628008BC253 /* add-button-pressed@2x.png */; settings = {ASSET_TAGS = (); }; };
 		8E2E76CE1BC55F88008BC253 /* DTCTestButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E2E76CD1BC55F88008BC253 /* DTCTestButton.m */; settings = {ASSET_TAGS = (); }; };
 		8E2E76D01BC6BB28008BC253 /* gear@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E2E76CF1BC6BB28008BC253 /* gear@2x.png */; settings = {ASSET_TAGS = (); }; };
+		8E2E76D31BC6BFDD008BC253 /* DTCHamburgerButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E2E76D21BC6BFDD008BC253 /* DTCHamburgerButton.m */; settings = {ASSET_TAGS = (); }; };
 		8E5D15B91BB2FDB900DBEF89 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E5D15B81BB2FDB900DBEF89 /* main.m */; };
 		8E5D15BC1BB2FDB900DBEF89 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E5D15BB1BB2FDB900DBEF89 /* AppDelegate.m */; };
 		8E5D15BF1BB2FDB900DBEF89 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E5D15BE1BB2FDB900DBEF89 /* ViewController.m */; };
@@ -76,6 +77,8 @@
 		8E2E76CC1BC55F88008BC253 /* DTCTestButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTCTestButton.h; sourceTree = "<group>"; };
 		8E2E76CD1BC55F88008BC253 /* DTCTestButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTCTestButton.m; sourceTree = "<group>"; };
 		8E2E76CF1BC6BB28008BC253 /* gear@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gear@2x.png"; sourceTree = "<group>"; };
+		8E2E76D11BC6BFDD008BC253 /* DTCHamburgerButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTCHamburgerButton.h; sourceTree = "<group>"; };
+		8E2E76D21BC6BFDD008BC253 /* DTCHamburgerButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTCHamburgerButton.m; sourceTree = "<group>"; };
 		8E5D15B41BB2FDB900DBEF89 /* MotionDesigniOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MotionDesigniOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E5D15B81BB2FDB900DBEF89 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8E5D15BA1BB2FDB900DBEF89 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -181,6 +184,8 @@
 				8E5D15BE1BB2FDB900DBEF89 /* ViewController.m */,
 				8E2E76CC1BC55F88008BC253 /* DTCTestButton.h */,
 				8E2E76CD1BC55F88008BC253 /* DTCTestButton.m */,
+				8E2E76D11BC6BFDD008BC253 /* DTCHamburgerButton.h */,
+				8E2E76D21BC6BFDD008BC253 /* DTCHamburgerButton.m */,
 				8E5D15C01BB2FDB900DBEF89 /* Main.storyboard */,
 				8E5D15C31BB2FDB900DBEF89 /* Assets.xcassets */,
 				8E5D15C51BB2FDB900DBEF89 /* LaunchScreen.storyboard */,
@@ -425,6 +430,7 @@
 				8E5D15BC1BB2FDB900DBEF89 /* AppDelegate.m in Sources */,
 				8E0F4AC81BB32E58006C3779 /* NSValue+JNWAdditions.m in Sources */,
 				8E5D15B91BB2FDB900DBEF89 /* main.m in Sources */,
+				8E2E76D31BC6BFDD008BC253 /* DTCHamburgerButton.m in Sources */,
 				8E2E76CE1BC55F88008BC253 /* DTCTestButton.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
