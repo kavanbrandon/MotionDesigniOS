@@ -10,6 +10,7 @@
 #import "JNWSpringAnimation.h"
 #import "AppDelegate.h"
 #import "Pop.h"
+#import "DTCTestButton.h"
 
 @interface ViewController ()
 @property (weak, nonatomic) IBOutlet UIView *designView;
@@ -38,6 +39,7 @@
 //    [self addMapIcon];
     
 //    [self delayedMusicPlayerAnimation];
+//    [self animatedTestButtonAnimation];
 }
 
 - (IBAction)runButton:(id)sender {
@@ -54,7 +56,9 @@
     //    [self animateDampnessAndStiffnessWithJNWSpringAnimation];
     //    [self animateScaleAndRotationJNWSpringAnimation];
     
-    [self popAnimationSimple];
+    //    [self popAnimationSimple];
+    //    [self popAnimationMultiple];
+    //    [self popAnimationBounciness];
 }
 
 -(void)basicScaleAnimation {
@@ -653,13 +657,109 @@
     
     POPSpringAnimation *scale = [POPSpringAnimation animationWithPropertyNamed:kPOPViewScaleXY];
     scale.toValue = [NSValue valueWithCGPoint:CGPointMake(2, 2)];
-    scale.springBounciness = 20.0f;
-    scale.springSpeed = 1.0f;
-    [redBall pop_addAnimation:scale forKey:@"scale"];
+    scale.springBounciness = 20.0f; // Between 0-20
+    scale.springSpeed = 1.0f; // Between 0-20
+//    scale.dynamicsFriction = 20;
+//    scale.dynamicsMass = 1;
+//    scale.dynamicsTension = 300;
+    [redBall pop_addAnimation:scale forKey:@"scaleAnimation"];
+    
+    /*
+    kPOPViewAlpha — The opacity of a view
+    kPOPViewFrame — The overall frame of a view
+    kPOPViewScaleXY — The scale (both X and Y axis) of a view
+    kPOPViewBackgroundColor — The background color of a view
+    kPOPLayerCornerRadius — The corner radius of a layer
+    kPOPLayerRotation — The rotation of a layer
+    kPOPLayerShadowRadius — The size of a layer’s drop shadow
+    */
 }
 
+-(void)popAnimationMultiple {
+    CGFloat windowWidth = self.view.bounds.size.width;
+    // Add our pink square to the interface
+    UIView *orangeSquare = [[UIView alloc] initWithFrame:CGRectMake(windowWidth/10, 200, 50, 50)];
+    orangeSquare.backgroundColor = [UIColor orangeColor];
+    [self.view addSubview:orangeSquare];
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 1 * NSEC_PER_SEC), dispatch_get_main_queue(), ^(void){
+        POPSpringAnimation *scale = [POPSpringAnimation animationWithPropertyNamed:kPOPViewScaleXY];
+        scale.toValue = [NSValue valueWithCGPoint:CGPointMake(1.5, 1.5)];
+        scale.springBounciness = 15;
+        scale.springSpeed = 5.0f;
+        [orangeSquare pop_addAnimation:scale forKey:@"scale"];
+        
+        POPSpringAnimation *move = [POPSpringAnimation animationWithPropertyNamed:kPOPLayerPositionX];
+        move.toValue = @(windowWidth-100);
+        move.springBounciness = 15;
+        move.springSpeed = 5.0f;
+        [orangeSquare.layer pop_addAnimation:move forKey:@"position"];
+        
+        POPSpringAnimation *spin = [POPSpringAnimation animationWithPropertyNamed:kPOPLayerRotation];
+        spin.toValue = @(M_PI*4);
+        spin.springBounciness = 15;
+        spin.springSpeed = 5.0f;
+        [orangeSquare.layer pop_addAnimation:spin forKey:@"spin"];
+        
+        POPSpringAnimation *color = [POPSpringAnimation animationWithPropertyNamed:kPOPViewBackgroundColor];
+        color.toValue = [UIColor greenColor];
+        color.springBounciness = 15;
+        color.springSpeed = 5.0f;
+        [orangeSquare pop_addAnimation:color forKey:@"colorChange"];
+    });
+}
 
+-(void)popAnimationBounciness {
+    // Add our red ball to the interface
+    UIView *redBall = [[UIView alloc] initWithFrame:CGRectMake(150, 200, 75, 75)];
+    redBall.backgroundColor = [UIColor redColor];
+    redBall.layer.cornerRadius = 75/2; // Half the width
+    [self.view addSubview:redBall];
+    
+    // Add a blue ball
+    UIView *blueBall = [[UIView alloc] initWithFrame:CGRectMake(350, 200, 75, 75)];
+    blueBall.backgroundColor = [UIColor blueColor];
+    blueBall.layer.cornerRadius = 75/2; // Half the width
+    [self.view addSubview:blueBall];
+    
+    UIView *greenBall = [[UIView alloc] initWithFrame:CGRectMake(550, 200, 75, 75)];
+    greenBall.backgroundColor = [UIColor greenColor];
+    greenBall.layer.cornerRadius = 75/2; // Half the width
+    [self.view addSubview:greenBall];
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 7 * NSEC_PER_SEC), dispatch_get_main_queue(), ^(void){
+        POPSpringAnimation *scale = [POPSpringAnimation animationWithPropertyNamed:kPOPViewScaleXY];
+        scale.toValue = [NSValue valueWithCGPoint:CGPointMake(2, 2)];
+        scale.springBounciness = 5; // Between 0-20
+        scale.springSpeed = 10.0f; // Between 0-20
+        [redBall pop_addAnimation:scale forKey:@"scale"];
+    });
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 7.8 * NSEC_PER_SEC), dispatch_get_main_queue(), ^(void){
+        POPSpringAnimation *scale = [POPSpringAnimation animationWithPropertyNamed:kPOPViewScaleXY];
+        scale.toValue = [NSValue valueWithCGPoint:CGPointMake(2, 2)];
+        scale.springBounciness = 12; // Between 0-20
+        scale.springSpeed = 10.0f; // Between 0-20
+        [blueBall pop_addAnimation:scale forKey:@"scale"];
+    });
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 8.6 * NSEC_PER_SEC), dispatch_get_main_queue(), ^(void){
+        POPSpringAnimation *scale = [POPSpringAnimation animationWithPropertyNamed:kPOPViewScaleXY];
+        scale.toValue = [NSValue valueWithCGPoint:CGPointMake(2, 2)];
+        scale.springBounciness = 20; // Between 0-20
+        scale.springSpeed = 10.0f; // Between 0-20
+        [greenBall pop_addAnimation:scale forKey:@"scale"];
+    });
+}
 
+-(void)animatedTestButtonAnimation {
+    CGFloat windowWidth = self.view.bounds.size.width;
+    DTCTestButton *button = [DTCTestButton buttonWithType:UIButtonTypeCustom];
+    [button setImage:[UIImage imageNamed:@"gear"] forState:UIControlStateNormal];
+    [button setImage:[UIImage imageNamed:@"gear"] forState:UIControlStateHighlighted];
+    [button setFrame:CGRectMake(windowWidth/2, 100, 50, 50)];
+    [self.view addSubview:button];
+}
 
 
 
