@@ -34,6 +34,7 @@
 		8E5D15C71BB2FDB900DBEF89 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E5D15C51BB2FDB900DBEF89 /* LaunchScreen.storyboard */; };
 		8E5D15D21BB2FDB900DBEF89 /* MotionDesigniOSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E5D15D11BB2FDB900DBEF89 /* MotionDesigniOSTests.m */; };
 		8E5D15DD1BB2FDB900DBEF89 /* MotionDesigniOSUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E5D15DC1BB2FDB900DBEF89 /* MotionDesigniOSUITests.m */; };
+		FB9568FF8E038C7B63665EF0 /* libPods-MotionDesigniOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F97246493BA64CAA20DC8064 /* libPods-MotionDesigniOS.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,6 +96,7 @@
 		8E5D15DC1BB2FDB900DBEF89 /* MotionDesigniOSUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MotionDesigniOSUITests.m; sourceTree = "<group>"; };
 		8E5D15DE1BB2FDB900DBEF89 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F27B0CD7BC354C17EEF5965C /* Pods-MotionDesigniOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MotionDesigniOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-MotionDesigniOS/Pods-MotionDesigniOS.release.xcconfig"; sourceTree = "<group>"; };
+		F97246493BA64CAA20DC8064 /* libPods-MotionDesigniOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MotionDesigniOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB9568FF8E038C7B63665EF0 /* libPods-MotionDesigniOS.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -237,6 +240,7 @@
 		C067CAED8545DAA7481E3483 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F97246493BA64CAA20DC8064 /* libPods-MotionDesigniOS.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
